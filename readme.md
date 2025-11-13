@@ -15,4 +15,4 @@ Technologies utilisées :
 
 Front-end : Twig, TailwindCSS
 
-Back-end : Symfony
+Back-end : PHP +8, Symfony
