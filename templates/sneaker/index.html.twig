@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-3xl font-bold mb-8 text-center text-gray-800 mt-8">Collection de Sneakers 🔥</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 p-4">
+
+    {% for sneaker in sneakers %}
+        {# DÉBUT DE LA CARTE #}
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
+
+            {# IMAGE DE LA SNEAKER #}
+            <div class="w-full h-48 overflow-hidden bg-gray-200">
+                
+                {# 🎯 LA LIGNE MODIFIÉE : UTILISATION DE asset() #}
+                <img src="{{ asset(sneaker.photo) }}" alt="{{ sneaker.name }} - {{ sneaker.brand }}" class="w-full h-full object-cover transform hover:scale-105 transition duration-500" loading="lazy">
+            </div>
+
+            {# CONTENU DE LA CARTE (reste inchangé) #}
+            <div class="p-4">
+                <h2 class="text-xl font-semibold text-gray-900 mb-1 truncate">{{ sneaker.name }}</h2>
+
+                <p class="text-sm font-medium text-gray-500 mb-3">{{ sneaker.brand }}</p>
+
+                {# DÉTAILS #}
+                <div class="flex justify-between items-center text-sm">
+                    <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full font-bold">
+                        {{ sneaker.color }}
+                    </span>
+                    <span class="text-lg font-bold text-gray-700">
+                        Taille: {{ sneaker.size }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        {# FIN DE LA CARTE #}
+    {% endfor %}
+
+    </div>
+    <footer>
+        <p class="text-sm text-center">⚠️ Ce site a été créé à des fins pédagogiques</p>
+    </footer>
+{% endblock %}

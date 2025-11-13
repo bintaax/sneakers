@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<div class="mx-auto my-8 max-w-3xl w-[95%] text-lg leading-relaxed font-sans">
+    <h1 class="text-3xl font-bold mb-4">Salut cher ami ! ☺️</h1>
+
+    <p class="mb-6">Je t'invite à voir ma belle collection de sneakers</p>
+
+    <a href="{{ path('app_sneaker') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+        Voir la collection
+    </a>
+</div>
+
+{% endblock %}
+
